@@ -1,2 +1,54 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+.ozone-status {
+  width: 100%;
+
+  span {
+    color: white;
+    font-size: 1.125rem;
+  }
+}
+
+.bg-ozone {
+  background-color: $secondary;
+
+  &.bg-ozone-good {
+    background-color: #00E400;
+  }
+
+  &.bg-ozone-moderate {
+    background-color: #ffff00;
+
+    span {
+      color: black;
+    }
+  }
+
+  &.bg-ozone-unhealthy-sensitive {
+    background-color: #ff7e00;
+  }
+
+  &.bg-ozone-unhealthy {
+    background-color: #ff0000;
+  }
+
+  &.bg-ozone-very-unhealthy {
+    background-color: #8F3F97;
+  }
+
+  &.bg-ozone-hazardous {
+    background-color: #7E0023;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .ozone-status {
+    width: 160px;
+    aspect-ratio: 1/1;
+
+    span {
+      font-size: 1.375rem;
+    }
+  }
+}

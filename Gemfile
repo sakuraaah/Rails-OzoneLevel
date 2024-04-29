@@ -68,3 +68,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'json', '~> 2.7', '>= 2.7.2'

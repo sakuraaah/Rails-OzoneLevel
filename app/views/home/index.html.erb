@@ -1,7 +1,16 @@
 <div class="bg-light p-5 rounded-3 m-3">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is the current ozone air quality readout for a heighbourhood in Las Vegas.</p>
-    <hr class="my-4">
-    <p>Hit "reload" in you web browser to update reading...</p>
-    <a class="btn btn-secondary btn-lg" href="#" role="button">Learn more</a>
+  <div class="d-flex flex-wrap gap-3 justify-content-between">
+    <div class="label">
+      <h1 class="display-4"><%= @aqi %> + <%= @zip_code %></h1>
+      <p class="lead">This is the current ozone air quality readout for a heighbourhood in <%= @reporting_area %>.</p>
+    </div>
+    <div class="ozone-status d-flex align-items-center justify-content-center p-3 rounded-3 bg-ozone <%= @status_color %>">
+      <span class="text-center text-uppercase"><%= @status_text %></span>
+    </div>
+  </div>
+
+  <hr class="my-4">
+
+  <p>Hit "reload" in you web browser to update reading...</p>
+  <a class="btn btn-secondary btn-lg" href="javascript: location.reload();" role="button">Reload</a>
 </div>
