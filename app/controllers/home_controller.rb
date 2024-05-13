@@ -1,8 +1,21 @@
 class HomeController < ApplicationController
   def index
-    @zip_code = '89129'
+    if params[:zipcode] and params[:zipcode] != ''
+      @zip_code = params[:zipcode]
+    else
+      @zip_code = '89129'
+    end
 
     ozone_info(@zip_code)
+  end
+
+  def add_zipcode
+    if params[:zipcode] and params[:zipcode] != ''
+      @zip_code = params[:zipcode]
+      redirect_to root_url(zipcode: @zip_code)
+    else
+      redirect_to root_url
+    end
   end
 
   private

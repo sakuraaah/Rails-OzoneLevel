@@ -1,11 +1,15 @@
 <div class="bg-light p-5 rounded-3 m-3">
   <div class="d-flex flex-wrap gap-3 justify-content-between">
     <div class="label">
-      <h1 class="display-4"><%= @aqi %> + <%= @zip_code %></h1>
-      <p class="lead">This is the current ozone air quality readout for a heighbourhood in <%= @reporting_area %>.</p>
+      <h1 class="display-4"><%= @aqi %></h1>
+      <% if @reporting_area %>
+        <p class="lead">This is the current ozone air quality readout for a heighbourhood in <%= @reporting_area %>.</p>
+      <% else %>
+        <p class="lead">No data found.</p>
+      <% end %>
     </div>
     <div class="ozone-status d-flex align-items-center justify-content-center p-3 rounded-3 bg-ozone <%= @status_color %>">
-      <span class="text-center text-uppercase"><%= @status_text %></span>
+      <span class="text-center text-uppercase"><%= @status_text || '-' %></span>
     </div>
   </div>
 
